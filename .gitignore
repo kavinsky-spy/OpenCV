@@ -1,7 +1,7 @@
-Photos/**
-
-Videos/**
-
+Photos/*
+Videos/*
+!Photos/.keep
+!Videos/.keep
 venv
 
 .idea

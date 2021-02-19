@@ -1,6 +1,6 @@
-Photos/*
+Photos/**
 
-Videos/*
+Videos/**
 
 venv
 

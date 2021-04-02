@@ -1,10 +1,11 @@
 import cv2 as cv
 
-img = cv.imread('Photos/IMG_1536.JPG')
+img = cv.imread('Photos/June_odd-eyed-cat.jpg')
 cv.imshow('Cat', img)
 
 
-def rescaleFrame(frame, scale=0.75):
+def rescaleFrame(frame, scale=0.50):
+    # Images, Videos and Live Video
     width = int(frame.shape[1] * scale)
     height = int(frame.shape[0] * scale)
 
@@ -13,14 +14,22 @@ def rescaleFrame(frame, scale=0.75):
     return cv.resize(frame, dimensions, interpolation=cv.INTER_LINEAR)
 
 
+resized_image = rescaleFrame(img)
+cv.imshow('Image', resized_image)
+
+def changeRes(width, height):
+    # Live video
+    capture.set(3, width)
+    capture.set(4, height)
+
 # Reading Videos
 # use int parameter for webcams connected.
-capture = cv.VideoCapture('Videos/131733564_1490180371175304_5900651882737316230_nddd')
+capture = cv.VideoCapture(0)
 
 while True:
     isTrue, frame = capture.read()
 
-    frame_resized = rescaleFrame(frame, scale=.2)
+    frame_resized = rescaleFrame(frame, scale=.9)
 
     cv.imshow('Video', frame)
     cv.imshow('Video Resized', frame_resized)

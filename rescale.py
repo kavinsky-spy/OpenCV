@@ -3,7 +3,7 @@ import cv2 as cv
 img = cv.imread('Photos/June_odd-eyed-cat.jpg')
 cv.imshow('Cat', img)
 
-
+# Rescale image/video on show
 def rescaleFrame(frame, scale=0.50):
     # Images, Videos and Live Video
     width = int(frame.shape[1] * scale)
